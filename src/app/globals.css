@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+html {
+  scroll-behavior: smooth;
+  cursor: none !important;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  /* color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif; */
+  background: #ffffff;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-gradient-custom {
+    background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 30%,
+      #b2171d 30%,
+      #b2171d 70%,
+      rgba(255, 255, 255, 0) 70%
+    );
+  }
+}
+
+@layer components {
+  .h2-title {
+    @apply xs:text-[40px] sm:text-[60px] lg:text-[82px] leading-none xs:leading-none lg:leading-none;
+  }
+  .h2-title span {
+    @apply text-primary-500;
+  }
+  .h3-title {
+    @apply text-[64px] xs:text-[40px] lg:text-[64px] leading-none xs:leading-none lg:leading-none;
+  }
+
+  .h3-title span {
+    @apply text-primary-500;
+  }
+  .h4-title {
+    @apply text-[32px] xs:text-[12px] lg:text-[32px] leading-none xs:leading-none lg:leading-none;
+  }
+  .btn {
+    @apply bg-primary-500 text-white px-4 py-3;
+  }
+}
+
+/**/
+/* Scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 3px; /* Hide scrollbar */
+  background: transparent; /* Optional: Set background color */
+}
+
+::-webkit-scrollbar-track {
+  background: #f7f7f7; /* Background color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e61d22; /* Scrollbar color */
+  border-radius: 10px; /* Rounded corners for the scrollbar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #e61d22; /* Darker color on hover */
+}
+
+/* Scrollbar for Firefox */
+* {
+  scrollbar-width: thin; /* Width of the scrollbar */
+  scrollbar-color: #e61d22 #f7f7f7; /* Scrollbar thumb and track color */
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.mygradient {
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+input:focus {
+  outline: none;
+}
